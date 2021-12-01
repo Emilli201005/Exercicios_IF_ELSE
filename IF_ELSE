@@ -1,0 +1,260 @@
+
+//# Exercício 1
+/*Faça um programa que peça os 3 lados de uma forma. 
+O programa deverá informar se os valores podem ser um triângulo.
+Indique, caso os lados formem um triângulo, se o mesmo é: equilátero, isósceles ou escaleno.*/
+public class Projeto1 {
+    public String a = "Primeiro numero";
+    public String b = "Segundo numero";
+    public String c = "Terceiro numero";
+   
+    void Scanner( float a, float  b, float c){
+        System.out.println("Digite tres valores: ");
+   
+      
+   if(a + b > c && a + c > b && b + c > a){
+            System.out.println("Os 3 lados formam um triangulo!\n");
+            if(a == b && a == c)
+            System.out.println("Equilatero\n");
+            else
+                if(a == b || a == c || b == c)
+                    System.out.println("Isosceles\n");
+                else
+                    System.out.println("Escaleno\n");
+        }
+        else
+            System.out.println("Os 3 lados NAO formam um trinagulo!\n");
+    }
+ }
+---------------------------------------------------------------------------------------------------------------------------------------------------
+/* # Exercício 2
+Faça um programa que peça um número correspondente a um determinado ano 
+e em seguida informe se este ano e ou não bissexto. 
+*/
+import java.util.Scanner;
+public class Projeto2 {
+    
+public static void main(String[] args) {
+           
+    Scanner ler = new Scanner(System.in);
+    
+    System.out.printf("Informe informe o ano para verificar se é bissexto");
+    
+    int x;
+    x = ler.nextInt();
+    
+    if (x% 4 == 0 || x% 400 == 0 || x% 100 == 0) {
+        
+        System.out.println("O ano "+ x +" é bissexto");
+      
+    }
+    
+    else {
+    
+       System.out.println("O ano "+ x +" não é bissexto");
+   
+   }
+}
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+/*Exercício 3
+Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
+- “Telefonou para a vítima? “
+- “Esteve no local do crime?”
+- “Mora perto da vítima? “
+- “Devia para a vítima? “
+- “Já trabalhou com a vítima? “
+O programa deve no final emitir uma classificação sobre a participação da pessoa no crime. 
+Se a pessoa responder positivamente a 2 questões ela deve ser classificada como “Suspeita”, 
+entre 3 e 4 como “Cúmplice” e 5 como “Assassino“. 
+Caso contrário, ele será classificado como “Inocente“.
+*/
+
+public class Projeto3 {
+    char  resp1, resp2, resp3, resp4, resp5;
+    int cont,cont1,cont2,cont3,cont4,contt;
+    
+System.out.print("Responda as perguntas com S para sim ou N para não.")
+    
+System.out.print("\nTelefonou para a vítima?");
+    
+Scanner("%c",resp1){
+    
+    cont=0;
+    }
+    if(resp1=='S'){
+        cont1= cont + 1;
+    }else{
+        cont1= cont + 0;
+    }
+    
+System.out.print("\nEsteve no local do crime?");
+    Scanner("%c",resp2);
+    
+    if(resp2=='S'){
+        cont2= cont1 + 1;
+    }else{
+        cont2= cont1 + 0;
+    }
+    
+System.out.print("\nMorava perto da vítima?");
+    Scanner("%c",resp3);
+    
+    if(resp3=='S'){
+        cont3= cont2 + 1;
+    }else{
+        cont3= cont2 + 0;
+    }
+    
+System.out.print("\nDevia para a vítima?");
+    Scanner("%c",resp4);
+    
+    if(resp4=='S'){
+        cont4= cont3 + 1;
+    }else{
+        cont4= cont3 + 0;
+    }
+    
+System.out.print("\nTrabalhou com a vitima?");
+    Scanner("%c",resp5);
+    
+    if(resp5=='S'){
+        contt= cont4 + 1;
+    }else{
+        contt= cont4 + 0;
+    }
+    
+    if(contt==2){
+    System.out.print("\nSuspeita!");
+    }else if(contt==3||contt==4){
+    System.out.print("\nCúmplice!");
+    }else if(contt==1){
+    System.out.print("\nNada a declarar!");
+    }else if(contt==5){
+    System.out.print("\nAssassino!");
+    }else{
+    System.out.print("\nNada a declarar!");
+    }
+}
+
+public Projeto3(char resp1, char resp2, char resp3, char resp4, char resp5) {
+    this.resp1 = resp1;
+    this.resp2 = resp2;
+    this.resp3 = resp3;
+    this.resp4 = resp4;
+    this.resp5 = resp5;
+}
+(Esse deu erro e eu não consegui arrumar...)
+---------------------------------------------------------------------------------------------------------------------------------------------------/* Exercício 4
+Um posto está vendendo combustíveis com a seguinte tabela de descontos:
+Álcool:
+- Até 20 litros: desconto de 3% por litro;
+- Acima de 20 litros: Desconto de 5% por litro.
+Gasolina:
+- Até 20 litros: desconto de 4% por litro;
+- Acima de 20 litros, desconto de 6% por litro.
+Escreva um programa que leia o número de litros vendidos, o tipo de combustível 
+(codificado da seguinte forma: A-álcool. G-gasolina), calcule e imprima o valor a ser pago pelo cliente.
+*/
+public class Projeto4 {
+float desc3a, desc5a;
+float desc4g, desc6g;
+float litros;
+float total_a_pagar1;
+float total_a_pagar2;
+float total_a_pagar3;
+float total_a_pagar4;
+float valor1;
+float valor2;
+float valor3;
+float valor4;
+char combustivel;
+
+System.out.print("Digite o combustivel A-Alcool ou G-Gasolina:"); 
+  void Scanner( "%c" , combustivel); 
+
+System.out.print("\nQuantos litros deseja abastecer?:");
+    Scanner("%f" , litros);
+
+    if(combustivel == 'A' || combustivel == 'a'){
+     System.out.print("\nO combustivel escolhido foi Alcool = 1.90/l\n");
+    }
+	if(litros <=20.00){
+	
+	valor1 = litros*1.90;
+	desc3a = valor1*0.03;
+	total_a_pagar1 = valor1-desc3a;
+	
+	System.out.print("\nO preco a ser pago e: %.2f" , total_a_pagar1);
+	
+	}
+     
+    else if(litros >20.00){
+	
+	valor2 = litros*1.90;
+	desc5a = valor2*0.05;
+	total_a_pagar2 = valor2-desc5a;
+	
+	System.out.print("\nO preco a ser pago e: %.2f" , total_a_pagar2);
+		
+}
+
+	if(combustivel == 'G' || combustivel == 'g'){
+	System.out.print("\nO combustivel escolhido foi Gasolina = 2.50/l\n");
+
+	if(litros <= 20.00){
+	
+	valor3 = litros*2.50;
+	desc4g = valor3*0.04;
+	total_a_pagar3 = valor3-desc4g;
+	
+	System.out.print("\nO preco a ser pago e: %.2f" , total_a_pagar3);
+	
+	}
+
+	else if(litros > 20.00){
+	
+	valor4 = litros*2.50;
+	desc6g = valor4*0.06;
+	total_a_pagar4 = valor4-desc6g;
+	
+	System.out.print("\nO preco a ser pago e: %.2f" , total_a_pagar4);
+		
+	}
+}
+
+}
+
+
+public Projeto4() {
+}
+
+
+public Projeto4(float desc3a, float desc5a, float desc4g, float desc6g, float litros, float total_a_pagar1,
+        float total_a_pagar2, float total_a_pagar3, float total_a_pagar4, float valor1, float valor2, float valor3,
+        float valor4, char combustivel) {
+    this.desc3a = desc3a;
+    this.desc5a = desc5a;
+    this.desc4g = desc4g;
+    this.desc6g = desc6g;
+    this.litros = litros;
+    this.total_a_pagar1 = total_a_pagar1;
+    this.total_a_pagar2 = total_a_pagar2;
+    this.total_a_pagar3 = total_a_pagar3;
+    this.total_a_pagar4 = total_a_pagar4;
+    this.valor1 = valor1;
+    this.valor2 = valor2;
+    this.valor3 = valor3;
+    this.valor4 = valor4;
+    this.combustivel = combustivel;
+}
+(Esse deu erro e eu não consegui arrumar...)
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    
+
+    
